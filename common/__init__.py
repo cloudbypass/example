@@ -4,6 +4,7 @@ import requests
 from urllib.parse import urlparse
 
 ENV_APIKEY = os.environ.get("CB_APIKEY", "")
+ENV_LOCAL_PROXY = os.environ.get("CB_LOCAL_PROXY", "127.0.0.1:1087")
 
 
 class CloudbypassSession(requests.Session):
@@ -15,7 +16,7 @@ class CloudbypassSession(requests.Session):
             "x-cb-apikey": apikey
         })
 
-    def request(self, method, url, proxy=None, **kwargs):
+    def request(self, method, url, **kwargs):
         print(f"[{method}] {url}")
         url = urlparse(url)
 
@@ -25,12 +26,11 @@ class CloudbypassSession(requests.Session):
             options.add("disable-redirect")
 
         headers = {
-            "x-cb-apikey": APIKEY,
             "x-cb-host": url.hostname,
             "x-cb-protocol": url.scheme,
-            "x-cb-proxy": proxy,
             "x-cb-options": ",".join(options)
         }
+
         if kwargs.get("headers"):
             kwargs['headers'].update(headers)
         else:
