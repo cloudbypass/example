@@ -1,6 +1,5 @@
 <p align="center">
   <a href="https://cloudbypass.com/" style="display: flex; align-items: center; justify-content: center;" target="_blank">
-
     <img src="assets/logo.png" alt="Cloudbypass" height="100">
     <img src="assets/logo-text.png" alt="Cloudbypass" height="30">
   </a>
