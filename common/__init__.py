@@ -8,12 +8,13 @@ ENV_LOCAL_PROXY = os.environ.get("CB_LOCAL_PROXY", "127.0.0.1:1087")
 
 
 class CloudbypassSession(requests.Session):
-    def __init__(self, apikey=None):
+    def __init__(self, apikey=None,proxy=None):
         super().__init__()
         apikey = apikey or ENV_APIKEY
         assert apikey
         self.headers.update({
-            "x-cb-apikey": apikey
+            "x-cb-apikey": apikey,
+            "x-cb-proxy": proxy
         })
 
     def request(self, method, url, **kwargs):
@@ -41,3 +42,21 @@ class CloudbypassSession(requests.Session):
             f"https://api.cloudbypass.com{url.path}" + (f"?{url.query}" if url.query else ""),
             **kwargs
         )
+
+
+class CloudbypassLocalProxySession(requests.Session):
+    def __init__(self, apikey=None, proxy=None):
+        super().__init__()
+        apikey = apikey or ENV_APIKEY
+        assert apikey
+        self.headers.update({
+            "x-cb-apikey": apikey,
+            "x-cb-proxy": proxy
+        })
+
+    def request(self, method, url, **kwargs):
+        kwargs['proxies'] = {
+            "http": ENV_LOCAL_PROXY,
+            "https": ENV_LOCAL_PROXY,
+        }
+        return super().request(method, url, **kwargs)
