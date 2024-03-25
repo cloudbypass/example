@@ -70,4 +70,4 @@ curl --request GET ^
 >
 > 例如`curl ... --header "x-cb-apikey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" ...`。
 
-[查看Python示例](code%2Fio%2Ftlscontact%2Fvisas-fr%2Flogin.py)
+[查看Python示例](code%2Fcom%2Ftlscontact%2Fvisas-fr%2Flogin.py)
