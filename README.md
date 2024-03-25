@@ -43,7 +43,7 @@ curl --request GET ^
 
 | 参数 | 说明                                        |
 |----|-------------------------------------------|
-| -k | (可选) 穿云API服务密钥，配置默认请求标头x-cb-apikey        |
+| -k | (可选) 穿云API服务密钥，配置默认请求标头`x-cb-apikey`      |
 | -l | (可选) 服务监听地址 (default "0.0.0.0:1087")      |
 | -s | (可选) 服务地址 (default "api.cloudbypass.com") |
 | -x | (可选) 配置穿云API请求代理，该值将被传入`x-cb-proxy`请求头    |
@@ -54,7 +54,6 @@ curl --request GET ^
 # linux
 curl --request GET \
 --url "https://opensea.io/category/memberships" \
---header "x-cb-apikey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
 --proxy "http://127.0.0.1:1087" \
 -k
 
@@ -63,9 +62,12 @@ curl --request GET \
 # windows
 curl --request GET ^
 --url "https://opensea.io/category/memberships" ^
---header "x-cb-apikey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" ^
 --proxy "http://127.0.0.1:1087" ^
 -k
 ```
+
+> 如果没有设置`-k`或`-x`时，可以通过请求头`x-cb-apikey`和`x-cb-proxy`动态配置。
+>
+> 例如`curl ... --header "x-cb-apikey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" ...`。
 
 [查看Python示例](code%2Fio%2Ftlscontact%2Fvisas-fr%2Flogin.py)
