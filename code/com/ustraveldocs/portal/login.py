@@ -64,6 +64,19 @@ def login():
 
     assert resp_003.status_code == 200
 
+    resp_004 = session.v2(
+        "GET",
+        "https://portal.ustraveldocs.com/applicanthome",
+        headers={
+            "Referer": "https://portal.ustraveldocs.com/LoginLandingPage"
+        },
+        part=PART
+    )
+
+    assert resp_004.status_code == 200
+
+    print("登录成功" if USERNAME in resp_004.text else "登录失败")
+
     print("完成登录操作")
 
 
