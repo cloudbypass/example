@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 import cloudbypass
 
+# 暂时无法访问
+
 if __name__ == '__main__':
     APIKEY = ""  # 环境变量 CB_APIKEY
     PROXY = ""  # 时效代理IP
