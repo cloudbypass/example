@@ -1,9 +1,6 @@
 from bs4 import BeautifulSoup
 import cloudbypass
 
-# 2024年12月1日
-#   https://fr.tlscontact.com/oauth2/authorization/oidc
-#   定制私服可以访问
 
 if __name__ == '__main__':
     APIKEY = ""  # 环境变量 CB_APIKEY
