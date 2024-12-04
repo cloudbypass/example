@@ -36,10 +36,11 @@ def encriptionPassword(o):
 
 
 if __name__ == '__main__':
-    current_time = time.strftime("GA;%Y-%m-%dT%H:%M:%SZ", time.localtime())
+    current_time = time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime())
 
-    client_source = encriptionPassword(current_time)
+    client_source = encriptionPassword(f"GA;{current_time}Z")
     password_enc = encriptionPassword(PASSWORD)
+    orangex = encriptionPassword(f"{USERNAME};{current_time}")
 
     # login
     resp = cloudbypass.Session(apikey=APIKEY, proxy=PROXY).post(
@@ -53,7 +54,8 @@ if __name__ == '__main__':
             "Route": r"chn/zh/deu",
             "x-cb-version": "2",
             "x-cb-sitekey": "0x4AAAAAAACYaM3U_Dz-4DN1",
-            "Clientsource": client_source
+            "Clientsource": client_source,
+            "Orangex": orangex
         },
         data={
             "username": USERNAME,
