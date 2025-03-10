@@ -16,10 +16,10 @@ if __name__ == '__main__':
     sess = cloudbypass.SessionV2(apikey=APIKEY, proxy=PROXY)
     resp = sess.request("POST", url, headers={
         "x-cb-sitekey": "0x4AAAAAAAVyjzMBC6Sst-qW",
-        "referer": "https://www.cityline.com/zh_HK/Login.html",
+        "referer": "https://www.cityline.com/Events.html",
         "origin": "https://www.cityline.com",
     }, json={
-            "accessToken": "[cf_token]",
+        "accessToken": "[cf_token]",
         "email": EMAIL,
         "locale": "zh_HK"
     })
