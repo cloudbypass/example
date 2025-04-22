@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     resp = sess.request(
         "POST",
-        "https://testnet.monad.xyz/api/claim",
+        "https://faucet-claim.molandak.org/",
         headers={
             "x-cb-fp": "edge133-win",
             "x-cb-sitekey": "0x4AAAAAAA-3X4Nd7hf3mNGx",
