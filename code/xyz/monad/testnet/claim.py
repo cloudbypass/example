@@ -1,4 +1,5 @@
 import time
+import uuid
 
 import cloudbypass
 
@@ -34,10 +35,10 @@ if __name__ == '__main__':
             "x-cb-sitekey": "0x4AAAAAAA-3X4Nd7hf3mNGx",
             "origin": "https://testnet.monad.xyz",
             "referer": "https://testnet.monad.xyz/",
+            "x-fingerprint": uuid.uuid4().hex
         },
         json={
             "address": ADDRESS,
-            "visitorId": "10e2c513898abfe8303e3973b0f0eb99",
             "cloudFlareResponseToken": "[cf_token]"
         }
     )
