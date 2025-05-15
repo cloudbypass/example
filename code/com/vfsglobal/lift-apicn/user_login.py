@@ -4,6 +4,10 @@ import cloudbypass
 from Crypto.Cipher import PKCS1_v1_5
 from Crypto.PublicKey import RSA
 
+'''
+已不支持
+'''
+
 """
 Credit consumption: 3
 https://visa.vfsglobal.com/chn/zh/deu/login

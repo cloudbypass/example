@@ -1,5 +1,9 @@
 import cloudbypass
 
+'''
+已不支持
+'''
+
 """
 请先安装依赖：
     pip install cloudbypass

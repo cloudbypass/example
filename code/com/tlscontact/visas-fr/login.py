@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 import cloudbypass
 
+'''
+已不支持
+'''
 
 if __name__ == '__main__':
     APIKEY = ""  # 环境变量 CB_APIKEY
