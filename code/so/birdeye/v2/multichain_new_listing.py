@@ -2,7 +2,7 @@ import cloudbypass
 
 """
 请先安装依赖：
-    pip install cloudbypass bs4 web3
+    pip install cloudbypass
 """
 
 APIKEY = ""
