@@ -8,7 +8,7 @@ import cloudbypass
 APIKEY = ""
 PROXY = ""
 
-sess = cloudbypass.SessionV2(
+sess = cloudbypass.Session(
     apikey=APIKEY,
     proxy=PROXY
 )
