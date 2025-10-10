@@ -11,10 +11,13 @@ APIKEY = ""
 EMAIL = ""
 PROXY = ""
 
+sess = cloudbypass.SessionV2(
+    apikey=APIKEY,
+    proxy=PROXY
+)
+
 if __name__ == '__main__':
-    url = "https://www.cityline.com/api/otp.do"
-    sess = cloudbypass.SessionV2(apikey=APIKEY, proxy=PROXY)
-    resp = sess.request("POST", url, headers={
+    resp = sess.request("POST", "https://www.cityline.com/api/otp.do", headers={
         "x-cb-sitekey": "0x4AAAAAAAVyjzMBC6Sst-qW",
         "referer": "https://www.cityline.com/Events.html",
         "origin": "https://www.cityline.com",

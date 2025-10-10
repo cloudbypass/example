@@ -11,8 +11,13 @@ APIKEY = ""
 PROXY = ""  # 必须是时效IP代理
 ADDRESS = ""
 
+sess = cloudbypass.SessionV2(
+    apikey=APIKEY,
+    proxy=PROXY
+)
+
 if __name__ == '__main__':
-    resp = cloudbypass.post(
+    resp = sess.post(
         f"https://artio-80085-faucet-api-cf.berachain.com/api/claim?address={ADDRESS}",
         headers={
             "X-Cb-Sitekey": "0x4AAAAAAARdAuciFArKhVwt",
@@ -21,8 +26,7 @@ if __name__ == '__main__':
         },
         json={"address": ADDRESS},
         apikey=APIKEY,
-        proxy=PROXY,
-        part="0"
+        proxy=PROXY
     )
 
     print(f"Status code: {resp.status_code}")

@@ -12,10 +12,10 @@ PROXY = ""  # 必须是固定IP的代理，否则cf_token会生成超时
 EMAIL = ""
 PASSWORD = ""
 
-session = cloudbypass.Session(apikey=APIKEY, proxy=PROXY)
+sess = cloudbypass.SessionV2(apikey=APIKEY, proxy=PROXY)
 
 if __name__ == '__main__':
-    resp = session.post(
+    resp = sess.post(
         "https://joshsfrogs.com/login",
         headers={
             "X-Cb-Sitekey": "0x4AAAAAAAFbs7Y-lYoVcAK2",
@@ -27,8 +27,7 @@ if __name__ == '__main__':
         json={
             "username": EMAIL,
             "password": PASSWORD
-        },
-        part="0"
+        }
     )
 
     print(f"Status Code: {resp.status_code}")
